@@ -1,0 +1,15 @@
+/* Importar bootstrap desde el node_module */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+@font-face{
+    font-family: "Baloo Thambi";
+    src: url('https://fonts.googleapis.com/css?family=Baloo+Thambi');
+}
+
+body{
+    font-family: 'Baloo Thambi', cursive;
+    font-size: 22px;
+    background: url('./../../Assets/img/pattern.png');
+    background-attachment: fixed;
+    padding-top: 10px;
+}
