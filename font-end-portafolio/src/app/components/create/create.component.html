@@ -3,27 +3,27 @@
     <form #fomrproyect="ngForm" (ngSubmit)="onSubmit(fomrproyect)">
         <div class="form-group">
           <label for="name">Nombre del proyecto</label>
-          <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="project.name" placeholder="Ingresa el nombre del proyecto">
+          <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="project.name" placeholder="Ingresa el nombre del proyecto" required>
         </div>
         <div class="form-group">
           <label for="descripcion">Descripcion</label>
-          <input type="text" class="form-control" name="descripcion" #descripcion="ngModel" [(ngModel)]="project.descripcion" placeholder="Ingresa una descripcion">
+          <input type="text" class="form-control" name="descripcion" #descripcion="ngModel" [(ngModel)]="project.descripcion" placeholder="Ingresa una descripcion" required>
         </div>
         <div class="form-group">
           <label for="category">Categoria</label>
-          <input type="text" class="form-control" name="category" #category="ngModel" [(ngModel)]="project.category" placeholder="Elige la categoria">
+          <input type="text" class="form-control" name="category" #category="ngModel" [(ngModel)]="project.category" placeholder="Elige la categoria" required>
         </div>
         <div class="form-group">
           <label for="year">Año</label>
-          <input type="text" class="form-control" name="year" #year="ngModel" [(ngModel)]="project.year" placeholder="Elige el año">
+          <input type="text" class="form-control" name="year" #year="ngModel" [(ngModel)]="project.year" placeholder="Elige el año" required>
         </div>
         <div class="form-group">
           <label for="langs">Lenguajes</label>
-          <input type="text" class="form-control" name="langs" #langs="ngModel" [(ngModel)]="project.langs" placeholder="Elige los o el lenguaje">
+          <input type="text" class="form-control" name="langs" #langs="ngModel" [(ngModel)]="project.langs" placeholder="Elige los o el lenguaje" required>
         </div>
         <div class="form-group">
           <label for="img">Imagen</label>
-          <input type="file" class="form-control" name="img" #img="ngModel" [(ngModel)]="project.img" placeholder="Requires una imagen">
+          <input type="file" class="form-control" name="img" #img="ngModel" [(ngModel)]="project.img" placeholder="Requires una imagen" required>
         </div>
         <div class="form-group col-md-12 ">
             <div class="col-md-4">
