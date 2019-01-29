@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+.container{
+    font-family: 'Oswald', sans-serif;
+}
+
+.clearfix{
+    padding-top: 20px;
+}
+input.form-control, textarea.form-control{
+    margin-bottom: 5px;
+}
+
+.alert {
+   padding: 1px;
+   color: #E20749;
+}

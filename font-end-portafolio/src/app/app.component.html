@@ -1,9 +1,9 @@
-<nav class="nav justify-content-center">
-  <a class="nav-link" [routerLink]="['/sobre']" routerLinkActive="router-link-active" >Sobre m&iacute;</a>
-  <a class="nav-link" [routerLink]="['/proyectos']" routerLinkActive="router-link-active" >Proyectos</a>
-  <a class="nav-link logo" [routerLink]="['']" routerLinkActive="router-link-active" >Developer</a>
-  <a class="nav-link" [routerLink]="['/crear']" routerLinkActive="router-link-active" >Crear proyectos</a>
-  <a class="nav-link" [routerLink]="['/contacto']" routerLinkActive="router-link-active" >Contactos</a>
+<nav class="nav justify-content-center navbar navbar-inverse">
+  <a class="nav-link" [routerLink]="['/sobre']" [routerLinkActive]="['router-link-active']" >Sobre m&iacute;</a>
+  <a class="nav-link" [routerLink]="['/proyectos']" [routerLinkActive]="['router-link-active']" >Proyectos</a>
+  <a class="nav-link logo">Developer</a> <!--[routerLink]="['']"  -->
+  <a class="nav-link" [routerLink]="['/crear']" [routerLinkActive]="['router-link-active']" >Crear proyectos</a>
+  <a class="nav-link" [routerLink]="['/contacto']" [routerLinkActive]="['router-link-active']" >Contactos</a>
 </nav>
 
 <div class="container principal">

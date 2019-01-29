@@ -1,19 +1,13 @@
-
-
-@font-face{
-    font-family: "yanone";
-    src: url('./../../../../../Assets/fonts/yanone.ttf');
-}
-@font-face{
-    font-family: "finger";
-    src: url('./../../../../../Assets/fonts/finger.ttf');
-}
+@import url('https://fonts.googleapis.com/css?family=Oswald');
 @font-face{
     font-family: "titilium";
     src: url('./../../../../../Assets/fonts/titilium.ttf');
 }
+
+
 .title{
     padding-top: 25px;
+    font-family: 'Oswald', sans-serif;
 }
 .about{
     font-family: 'titilium';

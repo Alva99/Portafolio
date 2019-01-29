@@ -1,13 +1,14 @@
 'use strict';
 var projectModel = require('../models/project');
 var fs = require('fs');
+var path = require('path');
 const project = {
 
     projectSave: async (req,res) => {
         var project = new projectModel();
         var params = req.body;
         project.name = params.name;
-        project.descripcion = params.desc;
+        project.descripcion = params.descripcion;
         project.category = params.category;
         project.year = params.year;
         project.langs = params.langs;
@@ -15,7 +16,7 @@ const project = {
         project.save((err,Stored)=>{
             if(err){
                 return res.json({
-                    'message': 'Error al guardar'
+                    'message': 'false'
                 });
             }
             else if(!Stored){
@@ -24,7 +25,8 @@ const project = {
                 });
             }else{
                 return res.json({
-                    'message': 'Datos guardados correctamente'
+                    'message': 'true',
+                    'values': Stored
                 });
             }
         });
@@ -151,6 +153,21 @@ const project = {
                 'message': fileName
             });
         }
+    },
+    getImage: async (req, res) => {
+        var file = req.params.img;
+        var pathFile = './upload/'+file;
+
+        fs.exists(pathFile,(exist) => {
+            if(exist){
+                return res.sendFile(path.resolve(pathFile));
+            }else{
+                return res.status(200).json({
+                    'message': 'No existe la imageb'
+                });
+            }
+        });
+
     }
 
 }; 

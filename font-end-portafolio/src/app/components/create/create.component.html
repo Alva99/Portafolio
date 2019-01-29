@@ -1,17 +1,26 @@
 <div class="container">
-    <h2>{{title}}</h2>
+    <h1 class="text-center">{{title}}</h1>
+    <div *ngIf="status == 'success' " class="alert alert-success" role="alert">
+      <a href="#" class="alert-link">El proyecto se guardo correctamente</a>
+    </div>
+    <div *ngIf="status == 'failed' " class="alert alert-danger" role="alertdialog">
+      <p>El proyecto no se ha generado correctamente</p>
+    </div>
     <form #fomrproyect="ngForm" (ngSubmit)="onSubmit(fomrproyect)">
         <div class="form-group">
           <label for="name">Nombre del proyecto</label>
           <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="project.name" placeholder="Ingresa el nombre del proyecto" required>
+          <span *ngIf="name.touched && !name.valid"  class="alert alert-danger" role="alert">El nombre del proyecto es obligatorio</span>
         </div>
         <div class="form-group">
           <label for="descripcion">Descripcion</label>
-          <input type="text" class="form-control" name="descripcion" #descripcion="ngModel" [(ngModel)]="project.descripcion" placeholder="Ingresa una descripcion" required>
+          <textarea class="form-control" name="descripcion" #descripcion="ngModel" [(ngModel)]="project.descripcion" placeholder="Ingresa una descripcion" rows="5" required></textarea>
+          <span *ngIf="descripcion.touched && !descripcion.valid" class="alert alert-danger" role="alert"> Descripcion es obligatoria</span>
         </div>
         <div class="form-group">
           <label for="category">Categoria</label>
           <input type="text" class="form-control" name="category" #category="ngModel" [(ngModel)]="project.category" placeholder="Elige la categoria" required>
+          <span *ngIf="category.touched && !category.valid" class="alert alert-danger" role="alert">Categoria es obligatoria</span>          
         </div>
         <div class="form-group">
           <label for="year">Año</label>
@@ -20,16 +29,17 @@
         <div class="form-group">
           <label for="langs">Lenguajes</label>
           <input type="text" class="form-control" name="langs" #langs="ngModel" [(ngModel)]="project.langs" placeholder="Elige los o el lenguaje" required>
-        </div>
-        <div class="form-group">
-          <label for="img">Imagen</label>
-          <input type="file" class="form-control" name="img" #img="ngModel" [(ngModel)]="project.img" placeholder="Requires una imagen" required>
-        </div>
-        <div class="form-group col-md-12 ">
-            <div class="col-md-4">
-                <input type="submit" class="form-control btn btn-sm btn-primary" value="Guardar proyecto">
+          <span *ngIf="langs.touched && !langs.valid" class="alert alert-danger" role="alert">Los lenguajes son obligatorios</span>          
 
-            </div>
+        </div>
+        <div class="custom-file">
+          <label class="custom-file-label" for="img">Imagen</label>
+          <input type="file" class="custom-file-input" name="img" #img="ngModel" [(ngModel)]="project.img"  (change)="uploadImag($event)" required>
+        </div>
+        <div class="clearfix">
+          <div class="form-group col-md-4 float-right">
+            <input type="submit" [disabled]="!fomrproyect.form.valid" class="form-control btn btn-primary btn-md" value="Guardar proyecto">    
+          </div>
         </div>
 
         
