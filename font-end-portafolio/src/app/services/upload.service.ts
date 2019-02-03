@@ -11,10 +11,6 @@ export class UploadService {
    }
 
    makeFile(url: string, params: Array<string>,files: Array<File>,name:string){
-    // console.log(files);
-    // console.log(name);
-    
-    
     return new Promise(function(resolve,reject){
       var formData = new FormData();
       var xhr = new XMLHttpRequest();
@@ -24,12 +20,10 @@ export class UploadService {
       
       xhr.onreadystatechange = function(){
         if(xhr.readyState == 4){
-          if(xhr.status == 500){
-            reject(xhr.onabort)
-          }else if (xhr.status == 404){
-            reject(xhr.getAllResponseHeaders);
-          }else{
+          if(xhr.status == 200){
             resolve(JSON.stringify(xhr.response));
+          }else {
+            reject(xhr.response);
           }
         }
       }

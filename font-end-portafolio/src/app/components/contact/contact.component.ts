@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  public correo: String;
+  public numero: String;
 
-  constructor() { }
+  constructor() { 
+    this.correo = 'alva.va.martinez@gmail.com';
+    this.numero = '(+52) 55 - 50 - 67 - 87 - 01';
+  }
 
   ngOnInit() {
+  }
+  onSubmit(form){
+    console.log(form);
+    
   }
 
 }

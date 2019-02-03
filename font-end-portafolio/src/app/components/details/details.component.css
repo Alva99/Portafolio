@@ -1,0 +1,20 @@
+.container .img{
+    float: left;
+    width: 30%;
+}
+.container .img img{
+    width: 100%;    
+    height: 300px;
+    overflow: hidden;
+}
+.container .data{
+    float: left;
+    width: 49%;
+    margin-left: 30px;
+}
+a.btn-warning{
+    margin-right: 20px;
+}
+a.btn{
+    margin-bottom: 15px;
+}

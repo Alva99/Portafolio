@@ -2,9 +2,10 @@
     list-style: none;
     display: block;
     float: left;
-    width: 30%;
+    width: 28%;
     text-align: center;
-    margin: 20px 0px;
+    margin: 20px 10px;
+
 }
 .project .image{
     width: 100%;
@@ -13,4 +14,9 @@
 }
 .project img{
     width: 100%;
+}
+
+.project a{
+    text-decoration: none;
+    color: black;
 }

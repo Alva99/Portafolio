@@ -1,0 +1,17 @@
+[33mcommit 865dbbe8169f028b6571139088513dbff36b5e78[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Alva <dasdfd233@gmail.com>
+Date:   Tue Jan 29 01:42:29 2019 -0600
+
+    Avanze en el proyecto con el font end con la creacion de nuevos proyecto almacenados ya en mongodb y manejo de imagen con nueva ruta
+
+[33mcommit ca9d6193466127a971ee2cd8c623bdd9b0b27c0b[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Alva <dasdfd233@gmail.com>
+Date:   Sat Jan 26 00:52:51 2019 -0600
+
+    Segundo commit agregado validacion al formulario de create
+
+[33mcommit 6cb9871eee6a71210855dd1faffddbd9ff37fcef[m
+Author: Alva <dasdfd233@gmail.com>
+Date:   Sat Jan 26 00:33:40 2019 -0600
+
+    primera version de portafolio

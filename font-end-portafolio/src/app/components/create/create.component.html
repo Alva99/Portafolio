@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container" *ngIf="project">
     <h1 class="text-center">{{title}}</h1>
     <div *ngIf="status == 'success' " class="alert alert-success" role="alert">
-      <a href="#" class="alert-link">El proyecto se guardo correctamente</a>
+      El proyecto se guardo correctamente, puedes visualizarlo en en siguiente enlace <a [routerLink]="['/details',_id]" routerLinkActive="router-link-active"  class="alert-link">Proyecto {{nameProject}}</a>
     </div>
     <div *ngIf="status == 'failed' " class="alert alert-danger" role="alertdialog">
       <p>El proyecto no se ha generado correctamente</p>
@@ -32,9 +32,12 @@
           <span *ngIf="langs.touched && !langs.valid" class="alert alert-danger" role="alert">Los lenguajes son obligatorios</span>          
 
         </div>
+        <div class="image" *ngIf="project.img" style="width: 58%; margin: 10px;">
+            <img src="{{url+'getImag/'+project.img}}" *ngIf="project.img !== null" style="width: 58%;">
+          </div>
         <div class="custom-file">
           <label class="custom-file-label" for="img">Imagen</label>
-          <input type="file" class="custom-file-input" name="img" #img="ngModel" [(ngModel)]="project.img"  (change)="uploadImag($event)" required>
+          <input type="file" class="custom-file-input" name="img" (change)="uploadImag($event)" required>
         </div>
         <div class="clearfix">
           <div class="form-group col-md-4 float-right">

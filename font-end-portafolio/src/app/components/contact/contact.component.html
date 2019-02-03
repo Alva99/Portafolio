@@ -1,3 +1,32 @@
-<p>
-  contact works!
-</p>
+<div class="container">
+  <div class="text-center">
+    <h3>Forma de contacto</h3>
+    <p>{{correo}}</p>
+    <p>{{numero}}</p>
+  </div>
+  <form method="POST" #nameForm="ngForm" (ngSubmit)="onSubmit(nameForm)">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <input type="text" name="name" id="name" #name  class="form-control" placeholder="Nombre" >
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <input type="email" name="email" id="email" #email  class="form-control" placeholder="Correo Electrónico">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <input type="text" name="number" id="number" #email class="form-control" placeholder="Número télefonico" pattern="[0-9]">
+        </div>
+      </div>
+    </div>
+    <div class="form-group  md-form">
+      <textarea type="text" name="message" id="message" #message  class="md-textarea form-control" placeholder="Mensaje" rows="5"></textarea>
+    </div>
+    <div class="text-center">
+      <input type="submit" class="btn btn-info btn-lg" value="Contactar">
+    </div>
+  </form>  
+</div>

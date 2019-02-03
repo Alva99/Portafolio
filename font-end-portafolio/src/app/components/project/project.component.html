@@ -2,10 +2,12 @@
 <h2>Lista de proyectos</h2>
 <ul>
   <li *ngFor="let project of projects" class="project">
-    <div class="image">
-      <img src="{{url+'getImag/'+project.img}}" *ngIf="project.img !== null">
-    </div>
-    {{project.name}} - {{project.category}}
+    <a [routerLink]="['/details',project._id]" >
+      <div class="image">
+        <img src="{{url+'getImag/'+project.img}}" *ngIf="project.img !== null">
+      </div>
+      {{project.name}} - {{project.category}}
+    </a>
   </li>
   <!-- <span>{{url+'getImag/'+project.img}}</span> -->
 </ul>

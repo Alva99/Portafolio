@@ -21,12 +21,10 @@ export class ProjectComponent implements OnInit {
   }
 
   getProjects(){
-    this._projectService.getProject().subscribe(
+    this._projectService.getProjects().subscribe(
       ressult => {
         if(ressult.message){
           this.projects = ressult.message;
-          console.log(this.projects);
-          
         } 
       },
       error => {

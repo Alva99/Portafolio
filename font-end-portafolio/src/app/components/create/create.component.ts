@@ -3,6 +3,7 @@ import { Project } from 'src/app/models/project';
 import { ProjectService } from 'src/app/services/project.service';
 import { UploadService } from 'src/app/services/upload.service';
 import { GlobalService } from 'src/app/services/global.service';
+declare var $: any;
 
 @Component({
   selector: 'app-create',
@@ -15,6 +16,9 @@ export class CreateComponent implements OnInit {
   public project: Project;
   public status: String;
   public uploadFile: Array<File>;
+  public saveProject;
+  public _id;
+  public nameProject: String;
 
   constructor(
     private _projectService: ProjectService,
@@ -29,31 +33,37 @@ export class CreateComponent implements OnInit {
   }
 
   onSubmit(form){
-    // console.log(this.uploadFile);
-
+   
+   
     this._projectService.saveProject(this.project).subscribe(
       resp => {
         if(resp.message == 'true'){
         
-          this._uploadService.makeFile(GlobalService.url+"uploadImag/"+resp.values._id,[],this.uploadFile,'img')
-          .then((result: any) => {
-            console.log(result);
-            this.status = 'success';
-            form.reset();
-          })
-          .catch((error) => {
-            console.log(error);
-            
-          });
+          if(this.uploadFile){
+            this._uploadService.makeFile(GlobalService.url+"uploadImag/"+resp.value._id,[],this.uploadFile,'img')
+            .then((result: any) => {
+              this._id = resp.value._id;
+              this.nameProject = form.form.value.name;
+              this.status = 'success';
+              this.scrollAuto();
+              form.reset();
+            })
+            .catch((error) => {
+              console.log(error);
+              this.scrollAuto();
+            });
+          }else{
+            this.scrollAuto();
+          }
 
         }else{
           this.status = 'failed';   
-          form.reset();
+          this.scrollAuto();
         }
       },
       error =>{
         this.status = 'failed ';
-        console.log(error);
+        this.scrollAuto();
         
       }
     );
@@ -63,7 +73,13 @@ export class CreateComponent implements OnInit {
 
   uploadImag(file: any){
     this.uploadFile = <Array<File>>file.target.files;
-
+  }
+  
+  scrollAuto(){
+      $( 'html, body').animate({
+          scrollTop: 0    
+      },100);
+      return false;
   }
 
 }

@@ -11,7 +11,7 @@ input.form-control, textarea.form-control{
     margin-bottom: 5px;
 }
 
-.alert {
+.alert-danger{
    padding: 1px;
    color: #E20749;
 }

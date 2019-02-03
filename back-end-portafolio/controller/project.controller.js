@@ -26,7 +26,7 @@ const project = {
             }else{
                 return res.json({
                     'message': 'true',
-                    'values': Stored
+                    'value': Stored
                 });
             }
         });
@@ -106,6 +106,7 @@ const project = {
             }
             else{
                 return res.status(200).json({
+                    'status': true,
                     'message': resultDelete
                 });
             }

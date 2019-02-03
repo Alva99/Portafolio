@@ -1,0 +1,13 @@
+<div class="container clearfix" *ngIf="project">
+    <div class="img">
+            <img src="{{url+'getImag/'+project.img}}" *ngIf="project.img !== null">
+    </div>      
+    <div class="data">
+        <h1>{{project.name}}</h1>
+        <h3>{{project.category}}</h3>
+        <p>{{project.descripcion}}</p>
+        <p>{{project.langs}}</p>
+        <a [routerLink]="['/edit',project._id]"  class="btn btn-warning">Editar Proyecto</a>
+        <a (click)="deleteProject(project._id)" class="btn btn-danger">Eliminar Proyecto</a>
+    </div>
+</div>
