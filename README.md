@@ -9,3 +9,6 @@ Te dejo los comandos para poder activar el back-end
 
 Con este comando se activa el servidor y se require de la activación de mongo db. con el siguiente comando.
 npm run dev y mongod.exe
+
+
+El comando de mongo solo funciona si esta instalado en el ordenador.
