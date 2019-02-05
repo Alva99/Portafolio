@@ -3,12 +3,12 @@ Aplicacion con el Stack MEAN
 
 
 
-Para poder activar el Back-End requires activar el servicio.
+Para poder activar el Back-End requires activar el servidor.
 
-Te dejo los comandos para poder activar el back-end
+El comando para activar la carpeta el back-end-portafolio solo se necesita:
 
-Con este comando se activa el servidor y se require de la activación de mongo db. con el siguiente comando.
-npm run dev y mongod.exe
+npm run dev.
 
+Agrego como se debe visualizar la ejecución del servidor. 
 
-El comando de mongo solo funciona si esta instalado en el ordenador.
+https://i.imgur.com/TNXRnkW.png
