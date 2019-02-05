@@ -11,7 +11,7 @@ import { EditComponent } from './components/edit/edit.component';
 
 
 const routes: Routes = [
-  {path:'', component: HomeComponent},
+  {path:'', component: AboutComponent},
   {path:'sobre', component: AboutComponent},
   {path:'proyectos', component: ProjectComponent},
   {path:'crear', component: CreateComponent},

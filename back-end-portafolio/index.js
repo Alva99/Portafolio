@@ -12,7 +12,7 @@ app.set('port' , process.env.Port || 5000);
 app.use(morgan('dev')); 
 app.use(express.json());
 app.use(cors({
-    origin: 'http://localhost:4200',
+    origin: '*',
     Headers:"Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method",
     methods: "GET, POST, OPTIONS, PUT, DELETE",
     Allow: "GET, POST, OPTIONS, PUT, DELETE"
